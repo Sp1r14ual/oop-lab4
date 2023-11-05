@@ -26,7 +26,7 @@ void Primary::save_to_file(ofstream& file)
     file << this->v << endl << this->scale << endl << this->shift;
     file.close();
 
-    cout << "Параметры основного распределения сохранены в файл primary_params.txt" << endl;
+    cout << "Параметры основного распределения сохранены в файл " + filename << endl;
 }
 
 void Primary::load_from_file(ifstream& file)
@@ -34,7 +34,7 @@ void Primary::load_from_file(ifstream& file)
     string filename;
     double v, scale, shift;
 
-    cout << "Введите имя файла, откуда следует считать параметры основного распределения: " << endl;
+    cout << "Введите имя файла, откуда следует считать параметры основного распределения: ";
     cin >> filename;
 
     file.open(filename);

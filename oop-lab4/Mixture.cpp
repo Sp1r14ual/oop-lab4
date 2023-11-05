@@ -74,26 +74,39 @@ void Mixture<Distribution1, Distribution2>::set_p(const double p)
 template <class Distribution1, class Distribution2>
 void Mixture<Distribution1, Distribution2>::load_from_file(ifstream& file)
 {
-	file.open("mixture_params.txt");
+	string filename;
+	//file.open("mixture_params.txt");
+	ifstream file1;
+	ifstream file2;
+
+	cout << "Введите имя файла с параметром смеси распределений: ";
+	cin >> filename;
+
+	file.open(filename);
+	if (!file)
+		throw runtime_error("Ошибка: не удалось открыть файл");
 
 	file >> p;
-	get_component1()->load_from_file(file);
-	get_component2()->load_from_file(file);
+	get_component1()->load_from_file(file1);
+	get_component2()->load_from_file(file2);
 
 	file.close();
-
 }
 
 template <class Distribution1, class Distribution2>
 void Mixture<Distribution1, Distribution2>::save_to_file(ofstream& file)
 {
+	ofstream file1;
+	ofstream file2;
 	file.open("mixture_params.txt");
 
 	file << p;
-	get_component1()->save_to_file(file);
-	get_component2()->save_to_file(file);
+	get_component1()->save_to_file(file1);
+	get_component2()->save_to_file(file2);
 
 	file.close();
+
+	cout << "Параметр смеси сохранен в файл mixture_params.txt" << endl;
 
 }
 

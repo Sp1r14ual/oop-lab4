@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Empirical.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mixture.cpp" />
     <ClCompile Include="Primary.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="catch.hpp" />
     <ClInclude Include="Distributions.h" />
     <ClInclude Include="Empirical.h" />
+    <ClInclude Include="Interface.h" />
     <ClInclude Include="Lib.h" />
     <ClInclude Include="Primary.h" />
   </ItemGroup>
